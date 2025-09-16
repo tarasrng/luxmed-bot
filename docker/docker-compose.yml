@@ -1,26 +1,27 @@
-version: '3.4'
+version: '3.8'
+name: luxmed-bot
 services:
-  luxmedbookingservice:
-    image: eugenezadyra/luxmed-bot:latest
-    env_file: secrets.env
-    environment:
-      DB_HOST: "database"
-      DB_PORT: 5432
-    volumes:
-    - lbs:/lbs
-    restart: unless-stopped
+  #  luxmedbookingservice:
+  #    image: eugenezadyra/luxmed-bot:latest
+  #    env_file: secrets.env
+  #    environment:
+  #      DB_HOST: "database"
+  #      DB_PORT: 5432
+  #    volumes:
+  #    - lbs:/lbs
+  #    restart: unless-stopped
 
   database:
     image: postgres:10.6
     volumes:
-    - postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
     ports:
-    - "5432:5432"
+      - "5433:5432"
     environment:
-    - POSTGRES_USER=lbs
-    - POSTGRES_PASSWORD=lsb123
-    - POSTGRES_DB=lbs
-    - TZ=Europe/Warsaw
+      - POSTGRES_USER=lbs
+      - POSTGRES_PASSWORD=lsb123
+      - POSTGRES_DB=lbs
+      - TZ=Europe/Warsaw
     restart: unless-stopped
 
 volumes:
