@@ -2,5 +2,5 @@
 cmds = ["./gradlew clean build -x check -x test -Pproduction"]
 
 [start]
-cmd = "java -jar server/build/libs/server.jar"
+cmd = "java -Xmx300m -Xms200m -XX:MaxMetaspaceSize=80m -XX:+UseSerialGC -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xss256k -jar server/build/libs/server.jar"
 
