@@ -470,7 +470,7 @@ databaseChangeLog:
       onFail: MARK_RAN
       not:
         tableExists:
-          tableName: system_user
+          tableName: app_user
     changes:
     - createTable:
         columns:
@@ -478,7 +478,7 @@ databaseChangeLog:
             autoIncrement: true
             constraints:
               primaryKey: true
-              primaryKeyName: system_user_pkey
+              primaryKeyName: app_user_pkey
             name: record_id
             type: BIGSERIAL
         - column:
@@ -486,6 +486,6 @@ databaseChangeLog:
               nullable: false
             name: active_account_id
             type: BIGINT
-        tableName: system_user
+        tableName: app_user
 
 

@@ -4,7 +4,7 @@ import javax.persistence._
 import scala.beans.BeanProperty
 
 @Entity
-@Table(name = "\"system_user\"")
+@Table(name = "app_user")
 @Access(AccessType.FIELD)
 class SystemUser extends RecordId {
   @BeanProperty
